@@ -1,119 +1,99 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cavaliere Su Misura</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Georgia', serif;
-      color: #1a1a1a;
-      background-color: #f8f8f8;
+      margin: 0; font-family: 'Georgia', serif; color: #111;
+      background: #f9f9f9;
     }
-
-    header {
-      background-image: url('https://images.unsplash.com/photo-1602810316322-e2f12c89b88d');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
+    header.hero {
+      background: url('https://images.unsplash.com/photo-1593032457869-bb3de5a145f4') center/cover;
+      height: 60vh; display: flex; align-items: center; justify-content: center;
+      color: #fff; text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     }
-
-    header h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
+    header.hero h1 {
+      font-size: 3em; margin: 0;
     }
-
-    header p {
-      font-size: 1.3em;
+    header.hero .btn {
+      margin-top: 1em; background: #000; color: #fff;
+      padding: 0.8em 1.6em; text-decoration: none; border-radius: 4px;
     }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+    .products {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 24px; padding: 40px; max-width: 1200px; margin: auto;
     }
-
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 10px;
+    .card {
+      background: #fff; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex;
+      flex-direction: column;
     }
-
-    .button {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 20px;
+    .card img { width: 100%; object-fit: cover; }
+    .card-content { padding: 16px; flex: 1; }
+    .card-content h3 { margin: 0; font-size: 1.2em; }
+    .card-content p { color: #555; margin: 8px 0; }
+    .card-content .btn {
+      display: inline-block; background: #000; color: #fff;
+      padding: 0.5em 1em; text-decoration: none; border-radius: 4px;
     }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .booking, footer {
+      text-align: center; padding: 40px 20px;
+      background: #fff; margin-top: 40px;
     }
-
-    .gallery img {
-      width: 100%;
-      max-width: 280px;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
+    .booking h2 { font-size: 1.8em; margin-bottom: 1em; }
+    .booking .btn { background: #000; color: #fff; padding: 0.8em 1.6em; border-radius: 4px; text-decoration: none; }
+    footer p { margin: 0; color: #777; font-size: 0.9em; }
+    @media (max-width: 600px) {
+      header.hero h1 { font-size: 2em; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>CAVALIERE SU MISURA</h1>
-    <p>Handgjorda kostymer. Levererade med elegans.</p>
-    <a href="#booking" class="button">Boka måttagning</a>
+  <header class="hero">
+    <div>
+      <h1>CAVALIERE SU MISURA</h1>
+      <a href="#booking" class="btn">Boka måttagning</a>
+    </div>
   </header>
 
-  <section>
-    <h2>Om Oss</h2>
-    <p>Vi är inte en vanlig butik. Cavaliere är resultatet av ett livsintresse för elegans, integritet och tyst styrka.</p>
-    <p>Genom våra internationella kontakter levererar vi skräddarsydda kostymer i världsklass – utan att du behöver lämna ditt hem.</p>
-    <p>Inspirerade av figurer som James Bond, Luca Faloni och John Wick, klär vi män som vill äga varje rum de går in i.</p>
-  </section>
-
-  <section id="booking">
-    <h2>Boka Tid</h2>
-    <p>Vi kommer till dig – var du än är i Skåne – och tar dina mått.</p>
-    <p>Vi förstår att din tid är dyrbar, därför gör vi processen så enkel som möjligt. Inga köpkrav. Inga avgifter. Bara skräddarsydd upplevelse.</p>
-    <a href="mailto:dinmail@example.com" class="button">Maila för att boka</a>
-  </section>
-
-  <section>
-    <h2>Galleri</h2>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1611078489935-b73158e79e03" alt="Grå kostym">
-      <img src="https://images.unsplash.com/photo-1602810316322-e2f12c89b88d" alt="Vit linnekostym">
-      <img src="https://images.unsplash.com/photo-1593032457869-bb3de5a145f4" alt="Blå smoking">
+  <section class="products">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1602810316322-e2f12c89b88d" alt="Mörkblå kostym">
+      <div class="card-content">
+        <h3>Mörkblå Kostym "Paris"</h3>
+        <p>10 995 kr</p>
+        <a href="mailto:dinmail@example.com" class="btn">Boka tid</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1593032457869-bb3de5a145f4" alt="Mellangrå kostym">
+      <div class="card-content">
+        <h3>Mellangrå Kostym</h3>
+        <p>8 995 kr</p>
+        <a href="mailto:dinmail@example.com" class="btn">Boka tid</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611078489935-b73158e79e03" alt="Kritstrecksrandig flanell">
+      <div class="card-content">
+        <h3>Flanellkostym &quot;Chalk-stripe&quot;</h3>
+        <p>11 995 kr</p>
+        <a href="mailto:dinmail@example.com" class="btn">Boka tid</a>
+      </div>
     </div>
   </section>
 
-  <section>
-    <h2>Kontakt</h2>
-    <p><strong>Mail:</strong> dinmail@example.com</p>
-    <p><strong>Plats:</strong> Skåne, Sverige</p>
-    <p><strong>Instagram:</strong> @cavaliere</p>
+  <section id="booking" class="booking">
+    <h2>Boka din privata måttagning</h2>
+    <p>Vi kommer till dig i Skåne och tar mått – utan avgifter.</p>
+    <a href="mailto:dinmail@example.com" class="btn">Maila för att boka</a>
   </section>
 
   <footer>
-    <p>© 2025 Cavaliere Su Misura. Alla rättigheter förbehållna.</p>
+    <p>© 2025 Cavaliere Su Misura – Skåne, Sverige – info@cavaliere.se</p>
   </footer>
 
 </body>
